@@ -2,7 +2,6 @@ import html
 import os
 from collections import defaultdict
 
-# CSS styles for entity types
 ENTITY_STYLES = {
     "EXAMPLE_LABEL": "background-color: #FFFF99;",  # Light yellow
     "OTHER_COMPOUND": "background-color: #ADD8E6;",  # Light blue
@@ -16,7 +15,6 @@ ENTITY_STYLES = {
 }
 
 def generate_html(text, annotations, output_file):
-    # Parse annotations into a list of (start, end, entity_type)
     ann_list = []
     for line in annotations.splitlines():
         if line.startswith("T"):
@@ -27,20 +25,16 @@ def generate_html(text, annotations, output_file):
             end = int(parts[3])
             ann_list.append((start, end, entity_type))
     
-    # Sort annotations by start position
     ann_list.sort(key=lambda x: x[0])
     
-    # Collect entities by type
     entity_dict = defaultdict(list)
     for start, end, etype in ann_list:
         entity_dict[etype].append(text[start:end])
     
-    # Build HTML content
     html_content = "<!DOCTYPE html>\n<html>\n<head>\n<style>\n"
-    # Entity styles
     for entity_type, style in ENTITY_STYLES.items():
         html_content += f".entity_{entity_type.lower()} {{ {style} padding: 2px; }}\n"
-    # Additional styles
+
     html_content += """
     body { font-family: Arial, sans-serif; }
     h1 { color: navy; }
@@ -53,11 +47,9 @@ def generate_html(text, annotations, output_file):
     """
     html_content += "</style>\n</head>\n<body>\n"
     
-    # Add example label
     if "EXAMPLE_LABEL" in entity_dict:
         html_content += f"<h1>Example {', '.join(entity_dict['EXAMPLE_LABEL'])}</h1>\n"
     
-    # Define entity categories for reaction flow
     starting_entities = entity_dict["STARTING_MATERIAL"]
     conditions = {
         "Solvent": entity_dict["SOLVENT"],
@@ -66,7 +58,6 @@ def generate_html(text, annotations, output_file):
     }
     product_entities = entity_dict["REACTION_PRODUCT"]
     
-    # Add reaction flow if relevant entities are present
     if starting_entities or product_entities:
         html_content += '<div class="reaction-flow">\n'
         if starting_entities:
@@ -87,7 +78,6 @@ def generate_html(text, annotations, output_file):
             html_content += '</ul>\n</div>\n'
         html_content += '</div>\n'
     
-    # Add yields
     yield_info = {
         "Percent": entity_dict["YIELD_PERCENT"],
         "Other": entity_dict["YIELD_OTHER"]
@@ -99,7 +89,6 @@ def generate_html(text, annotations, output_file):
         if yield_info["Other"]:
             html_content += f"<p>Other: {', '.join([html.escape(e) for e in yield_info['Other']])}</p>\n"
     
-    # Add other compounds
     other_entities = entity_dict["OTHER_COMPOUND"]
     if other_entities:
         html_content += '<h2>Other Compounds</h2>\n<ul>\n'
@@ -107,7 +96,6 @@ def generate_html(text, annotations, output_file):
             html_content += f"<li>{html.escape(entity)}</li>\n"
         html_content += '</ul>\n'
     
-    # Add full text with annotations
     html_content += "<h2>Full Text with Annotations</h2>\n<pre>\n"
     current_pos = 0
     annotated_text = ""
@@ -122,7 +110,6 @@ def generate_html(text, annotations, output_file):
     
     html_content += "</body>\n</html>"
     
-    # Write to file
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(html_content)
 
