@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 16.8</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>[5-(2,3-difluorophenyl)-3-methyl-2,4-dioxo-3,4-dihydro-2H-pyrimidin-1-yl]-methyl acetate</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: tetrahydrofuran</p>
+<p>Temperature: room temperature</p>
+<p>Time: 2 hours</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>[5-(2,3-difluorophenyl)-3-methyl-2,4-dioxo-3,4-dihydro-2H-pyrimidin-1-yl]-acetic acid</li>
+<li>[5-(2,3-difluorophenyl)-3-methyl-2,4-dioxo-3,4-dihydro-2H-pyrimidin-1-yl]-acetic acid</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 88%</p>
+<p>Other: 400 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>aqueous</li>
+<li>acetic acid</li>
+<li>ethyl acetate</li>
+<li>water</li>
+<li>aqueous</li>
+<li>sodium chloride</li>
+<li>magnesium sulphate</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+<span class='entity_example_label'>16.8</span>: <span class='entity_reaction_product'>[5-(2,3-difluorophenyl)-3-methyl-2,4-dioxo-3,4-dihydro-2H-pyrimidin-1-yl]-acetic acid</span>
+2.3 ml (2.3 mmol) of a 1N <span class='entity_reagent_catalyst'>aqueous</span> solution of <span class='entity_reagent_catalyst'>lithium hydroxide</span> is added to a solution of 475 mg (1.5 mmol) of <span class='entity_starting_material'>[5-(2,3-difluorophenyl)-3-methyl-2,4-dioxo-3,4-dihydro-2H-pyrimidin-1-yl]-methyl acetate</span> in 15 ml of <span class='entity_solvent'>tetrahydrofuran</span> and 3 mL of <span class='entity_reagent_catalyst'>water</span>. The reaction mixture is stirred at <span class='entity_temperature'>room temperature</span> for <span class='entity_time'>2 hours</span>, and then adjusted to pH6 by adding 4 ml of 1N <span class='entity_other_compound'>aqueous</span> solution of <span class='entity_other_compound'>acetic acid</span>. The product is extracted with <span class='entity_other_compound'>ethyl acetate</span>. The organic phase is washed with <span class='entity_other_compound'>water</span> and then with a saturated <span class='entity_other_compound'>aqueous</span> solution of <span class='entity_other_compound'>sodium chloride</span>, dried over <span class='entity_other_compound'>magnesium sulphate</span>, filtered and concentrated under vacuum. <span class='entity_yield_other'>400 mg</span> (<span class='entity_yield_percent'>88%</span>) of <span class='entity_reaction_product'>[5-(2,3-difluorophenyl)-3-methyl-2,4-dioxo-3,4-dihydro-2H-pyrimidin-1-yl]-acetic acid</span> is obtained in the form of a white solid.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0001_graph.png" alt="Reaction Graph">
+</body>
+</html>

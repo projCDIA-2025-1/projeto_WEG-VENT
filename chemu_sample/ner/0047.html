@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 17</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>(R)-N-methyl-N-(pyrrolidine-3-yl)-7H-pyrrolo[2,3-d]pyrimidine-4-amine</li>
+<li>4-fluorobenzenesulfonyl chloride</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: dichloromethane, CH2Cl2</p>
+<p>Temperature: room temperature</p>
+<p>Time: 1 hour</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>(R)-N-(1-((4-fluorophenyl)sulfonyl)pyrrolidine-3-yl)-N-methyl-7H-pyrrolo[2,3-d]pyrimidine-4-amine</li>
+<li>(R)-N-(1-((4-fluorophenyl)sulfonyl)pyrrolidine-3-yl)-N-methyl-7H-pyrrolo[2,3-d]pyrimidine-4-amine</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 77.8%</p>
+<p>Other: 93.5 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>MeOH</li>
+<li>CH2Cl2</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Example <span class='entity_example_label'>17</span>. <span class='entity_reaction_product'>(R)-N-(1-((4-fluorophenyl)sulfonyl)pyrrolidine-3-yl)-N-methyl-7H-pyrrolo[2,3-d]pyrimidine-4-amine</span>
+70.0 mg of <span class='entity_starting_material'>(R)-N-methyl-N-(pyrrolidine-3-yl)-7H-pyrrolo[2,3-d]pyrimidine-4-amine</span> was added to a 5-mL round-bottomed flask and then dissolved with 1.50 mL of <span class='entity_solvent'>dichloromethane</span> (<span class='entity_solvent'>CH2Cl2</span>). After 66.2 mg of <span class='entity_starting_material'>4-fluorobenzenesulfonyl chloride</span> was added thereto, the reaction mixture was treated with 0.0590 mL of <span class='entity_reagent_catalyst'>N,N-diisopropylethylamine</span> and then stirred at <span class='entity_temperature'>room temperature</span> for about <span class='entity_time'>1 hour</span>. The reaction mixture was concentrated under reduced pressure, and then the resulting residue was purified by flash column chromatography (<span class='entity_other_compound'>MeOH</span>:<span class='entity_other_compound'>CH2Cl2</span>=0:100→1:80→1:50). The resulting fraction was concentrated under reduced pressure and then further under vacuum. As a result, <span class='entity_yield_other'>93.5 mg</span> of <span class='entity_reaction_product'>(R)-N-(1-((4-fluorophenyl)sulfonyl)pyrrolidine-3-yl)-N-methyl-7H-pyrrolo[2,3-d]pyrimidine-4-amine</span> was obtained with a yield of about <span class='entity_yield_percent'>77.8%</span>.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0047_graph.png" alt="Reaction Graph">
+</body>
+</html>

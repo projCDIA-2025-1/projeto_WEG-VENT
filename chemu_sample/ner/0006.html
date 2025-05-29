@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 4</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>Methyl 6-((1-methyl-N-phenylpiperidine-4-carboxamido)methyl)nicotinate</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: ethanol</p>
+<p>Temperature: room temperature, reflux, room temperature</p>
+<p>Time: 12 hours</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>N-((5-(hydrazinecarbonyl)pyridin-2-yl)methyl)-1-methyl-N-phenylpiperidine-4-carboxamide</li>
+<li>title compound</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 95.8%</p>
+<p>Other: 0.115 g</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>SiO2</li>
+<li>methanol</li>
+<li>dichloromethane</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+[Step <span class='entity_example_label'>4</span>] Synthesis of <span class='entity_reaction_product'>N-((5-(hydrazinecarbonyl)pyridin-2-yl)methyl)-1-methyl-N-phenylpiperidine-4-carboxamide</span>
+<span class='entity_starting_material'>Methyl 6-((1-methyl-N-phenylpiperidine-4-carboxamido)methyl)nicotinate</span> (0.120 g, 0.327 mmol), synthesized in step 3, and <span class='entity_reagent_catalyst'>hydrazine monohydrate</span> (0.079 mL, 1.633 mmol) were dissolved in <span class='entity_solvent'>ethanol</span> (10 mL) at <span class='entity_temperature'>room temperature</span>, and the solution was heated under <span class='entity_temperature'>reflux</span> for <span class='entity_time'>12 hours</span>, and then cooled to <span class='entity_temperature'>room temperature</span> to terminate the reaction. The reaction mixture was concentrated under reduced pressure to remove the solvent, and the concentrate was purified by column chromatography (<span class='entity_other_compound'>SiO2</span>, 4 g cartridge; <span class='entity_other_compound'>methanol</span>/<span class='entity_other_compound'>dichloromethane</span> = from 5% to 30%) and concentrated to give the <span class='entity_reaction_product'>title compound</span> (<span class='entity_yield_other'>0.115 g</span>, <span class='entity_yield_percent'>95.8%</span>) as a foam solid.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0006_graph.png" alt="Reaction Graph">
+</body>
+</html>

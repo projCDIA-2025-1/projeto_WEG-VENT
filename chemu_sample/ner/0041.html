@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>168B</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: tetrahydrofuran</p>
+<p>Temperature: 25 °C, 25 °C</p>
+<p>Time: 3 hours</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>168C</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 94.43%</p>
+<p>Other: 650 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>water</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Compound <span class='entity_starting_material'>168B</span> (710 mg, 1.51 mmol) was added to a solution of <span class='entity_solvent'>tetrahydrofuran</span> (5 mL) at <span class='entity_temperature'>25 °C</span> and then a <span class='entity_reagent_catalyst'>sodium hydroxide</span> solution (2 mol/L, 3.78 ml) was added and the solution was stirred at <span class='entity_temperature'>25 °C</span> for <span class='entity_time'>3 hours</span>. The pH of the solution was adjusted to 2. The aqueous phase was filtered and the filter cake was washed with <span class='entity_other_compound'>water</span> (20 ml * 2), dried and concentrated to give compound <span class='entity_reaction_product'>168C</span> (white solid, <span class='entity_yield_other'>650 mg</span>, the yield was <span class='entity_yield_percent'>94.43%</span>).
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0041_graph.png" alt="Reaction Graph">
+</body>
+</html>

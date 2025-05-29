@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 3</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>Methyl 4-((N-(3-chloro-4-fluorophenyl)-1,1-dioxidotetrahydro-2H-thiopyran-4-carboxamido)methyl)-3-fluorobenzoate</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: ethanol, water</p>
+<p>Temperature: room temperature, 80°C, room temperature</p>
+<p>Time: 5 hours</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>N-(3-chloro-4-fluorophenyl)-N-(2-fluoro-4-(hydrazinecarbonyl)benzyl)tetrahydro-2H-thiopyran-4-carboxamide 1,1-dioxide</li>
+<li>title compound</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 95.2%</p>
+<p>Other: 1.180 g</p>
+<h2>Full Text with Annotations</h2>
+<pre>
+[Step <span class='entity_example_label'>3</span>] Synthesis of <span class='entity_reaction_product'>N-(3-chloro-4-fluorophenyl)-N-(2-fluoro-4-(hydrazinecarbonyl)benzyl)tetrahydro-2H-thiopyran-4-carboxamide 1,1-dioxide</span>
+<span class='entity_starting_material'>Methyl 4-((N-(3-chloro-4-fluorophenyl)-1,1-dioxidotetrahydro-2H-thiopyran-4-carboxamido)methyl)-3-fluorobenzoate</span> (1.240 g, 2.628 mmol), synthesized in step 2, and <span class='entity_reagent_catalyst'>hydrazine monohydrate</span> (2.554 mL, 52.554 mmol) were dissolved in <span class='entity_solvent'>ethanol</span> (20 mL)/<span class='entity_solvent'>water</span> (5 mL) at <span class='entity_temperature'>room temperature</span>, and the solution was stirred at <span class='entity_temperature'>80°C</span> for <span class='entity_time'>5 hours</span>, and then cooled to <span class='entity_temperature'>room temperature</span> to terminate the reaction. The reaction mixture was concentrated under reduced pressure to remove the solvent. The <span class='entity_reaction_product'>title compound</span> was used without further purification (<span class='entity_yield_other'>1.180 g</span>, <span class='entity_yield_percent'>95.2%</span>) as yellow solid.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0002_graph.png" alt="Reaction Graph">
+</body>
+</html>

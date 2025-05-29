@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 2</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>2,4,5-trichloronicotinaldehyde</li>
+<li>prop-1-yn-1-ylmagnesium bromide</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: THF, THF</p>
+<p>Temperature: 0° C, 0° C</p>
+<p>Time: 1 hour</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>1-(2,4,5-Trichloropyridin-3-yl)but-2-yn-1-ol</li>
+<li>title compound</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 78%</p>
+<p>Other: 1.95 g</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>aqueous</li>
+<li>NH4Cl</li>
+<li>EtOAc</li>
+<li>water</li>
+<li>brine</li>
+<li>Na2SO4</li>
+<li>silica-gel</li>
+<li>EtOAc</li>
+<li>heptane</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Step <span class='entity_example_label'>2</span>: <span class='entity_reaction_product'>1-(2,4,5-Trichloropyridin-3-yl)but-2-yn-1-ol</span>
+To a solution of <span class='entity_starting_material'>2,4,5-trichloronicotinaldehyde</span> (2.11 g, 10.03 mmol) in <span class='entity_solvent'>THF</span> (30 ml) was added <span class='entity_starting_material'>prop-1-yn-1-ylmagnesium bromide</span> (0.5 M in <span class='entity_solvent'>THF</span>, 26.1 ml, 13.03 mmol) at <span class='entity_temperature'>0° C</span>. The reaction mixture was stirred at <span class='entity_temperature'>0° C</span>. for <span class='entity_time'>1 hour</span>. To the mixture was added <span class='entity_other_compound'>aqueous</span> saturated <span class='entity_other_compound'>NH4Cl</span> solution followed by extraction with <span class='entity_other_compound'>EtOAc</span>. The combined organic layers were washed with <span class='entity_other_compound'>water</span> and <span class='entity_other_compound'>brine</span>, dried over anhydrous <span class='entity_other_compound'>Na2SO4</span> and concentrated under reduced pressure. The crude was purified with <span class='entity_other_compound'>silica-gel</span> chromatography (10-100% <span class='entity_other_compound'>EtOAc</span> in <span class='entity_other_compound'>heptane</span>) to give the <span class='entity_reaction_product'>title compound</span> (<span class='entity_yield_other'>1.95 g</span>, <span class='entity_yield_percent'>78%</span> yield).
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0048_graph.png" alt="Reaction Graph">
+</body>
+</html>

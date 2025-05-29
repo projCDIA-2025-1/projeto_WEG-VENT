@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 56, 1</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>202</li>
+<li>208</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>I-307</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 56%</p>
+<p>Other: 56 mg, 0.105 mmol</p>
+<h2>Full Text with Annotations</h2>
+<pre>
+(Example <span class='entity_example_label'>56</span>)
+Step <span class='entity_example_label'>1</span>
+In the same manner as steps 4 and 5 of Example 53, Compound <span class='entity_reaction_product'>I-307</span> (<span class='entity_yield_other'>56 mg</span>, <span class='entity_yield_other'>0.105 mmol</span>, <span class='entity_yield_percent'>56%</span> yield) was obtained as a yellow solid from Compound <span class='entity_starting_material'>202</span> (100 mg, 0.189 mmol) and Compound <span class='entity_starting_material'>208</span> (0.128 mL, 1.892 mmol).
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0017_graph.png" alt="Reaction Graph">
+</body>
+</html>

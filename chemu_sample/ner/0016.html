@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example a</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>2-(2,3-dihydrobenzofuran-5-yl)acetic acid</li>
+<li>methanol</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Temperature: 70° C</p>
+<p>Time: 2 h</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>methyl 2-(2,3-dihydrobenzofuran-5-yl)acetate</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 93%</p>
+<p>Other: 4.0 g</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>2-(7-bromo-2,3-dihydrobenzofuran-5-yl)ethan-1-ol</li>
+<li>ethyl acetate</li>
+<li>brine</li>
+<li>sodium sulfate</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+(<span class='entity_example_label'>a</span>). <span class='entity_other_compound'>2-(7-bromo-2,3-dihydrobenzofuran-5-yl)ethan-1-ol</span>
+To a solution of <span class='entity_starting_material'>2-(2,3-dihydrobenzofuran-5-yl)acetic acid</span> (4 g, 22.4 mmol) in <span class='entity_starting_material'>methanol</span> (40 mL) was added <span class='entity_reagent_catalyst'>sulfuric acid</span> (219 mg, 2.24 mmol). The reaction mixture was heated to <span class='entity_temperature'>70° C</span>. and stirred at that temperature for <span class='entity_time'>2 h</span>. The mixture was concentrated and the residue was added <span class='entity_other_compound'>ethyl acetate</span> (50 mL). The solution was washed with <span class='entity_other_compound'>brine</span>, then the organic phase was dried over anhydrous <span class='entity_other_compound'>sodium sulfate</span>, filtered and concentrated in vacuo to provide <span class='entity_reaction_product'>methyl 2-(2,3-dihydrobenzofuran-5-yl)acetate</span> (<span class='entity_yield_other'>4.0 g</span>, yield: <span class='entity_yield_percent'>93%</span>) as a yellow oil.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0016_graph.png" alt="Reaction Graph">
+</body>
+</html>

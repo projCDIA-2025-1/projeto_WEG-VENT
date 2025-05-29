@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 7</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>2,3-Dichloro-4-nitropyrimidine</li>
+<li>2-methoxyaniline</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: tetrahydrofuran</p>
+<p>Temperature: -78°C, room temperature</p>
+<p>Time: 2 hours</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>7-c</li>
+<li>7-c</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 82%</p>
+<p>Other: 6.9 g</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>N-(2-Methoxy-4-(piperidin-4-yl)phenyl)-3-(2-methoxyphenyl)-3H-[1,2,3]tria zolo[4,5-d]pyrimidin-5-amine</li>
+<li>7</li>
+<li>aqueous</li>
+<li>hydrochloric acid</li>
+<li>dichloromethane</li>
+<li>sodium sulfate</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Example <span class='entity_example_label'>7</span>
+<span class='entity_other_compound'>N-(2-Methoxy-4-(piperidin-4-yl)phenyl)-3-(2-methoxyphenyl)-3H-[1,2,3]tria zolo[4,5-d]pyrimidin-5-amine</span> (compound <span class='entity_other_compound'>7</span>)
+Preparation of compound <span class='entity_reaction_product'>7-c</span>.
+<span class='entity_starting_material'>2,3-Dichloro-4-nitropyrimidine</span> (5.8 g, 30 mmol) was dissolved in anhydrous <span class='entity_solvent'>tetrahydrofuran</span> (100 mL) and the reaction solution was cooled to <span class='entity_temperature'>-78°C</span>. Then <span class='entity_starting_material'>2-methoxyaniline</span> (3.7 g, 30 mmol) and <span class='entity_reagent_catalyst'>diisopropylethylamine</span> (3.9 g, 30 mmol) were added to the solution and stirring was continued for <span class='entity_time'>2 hours</span>. The reaction mixutre was allowed to warm to <span class='entity_temperature'>room temperature</span>, 1 M <span class='entity_other_compound'>aqueous</span> <span class='entity_other_compound'>hydrochloric acid</span> solution (50 mL) was added and then extracted with <span class='entity_other_compound'>dichloromethane</span> (50 mL × 3). The combined organic phases were dried over anhydrous <span class='entity_other_compound'>sodium sulfate</span> and filtered, and the filtrate was concentrated under reduced pressure to deliver a yellow solid <span class='entity_reaction_product'>7-c</span> (<span class='entity_yield_other'>6.9 g</span>, yield: <span class='entity_yield_percent'>82%</span>). This product was used without further purification.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0010_graph.png" alt="Reaction Graph">
+</body>
+</html>

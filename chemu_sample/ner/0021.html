@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>1,1-Dioxo-3,3-dibutyl-5-phenyl-7-methylthio-8-[N-((R)-α-carboxybenzyl) carbamoylmethoxy]-2,3,4,5-tetrahydro-1,2,5-benzothiadiazepine</li>
+<li>tert-butyl (2R,3R)-3-amino-2-hydroxybutanoate</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: DCM, DMF</p>
+<p>Time: 4 hours</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>1,1-Dioxo-3,3-dibutyl-5-phenyl-7-methylthio-8-[N-((R)-α-{N-[1-(R)-2-(R)-1-(t-butoxycarbonyl)-1-hydroxy-prop-2-yl]carbamoyl}benzyl)carbamoylmethoxy]-2,3,4,5-tetrahydro-1,2,5-benzothiadiazepine</li>
+<li>title compound</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 53%</p>
+<p>Other: 33 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>silica</li>
+<li>DCM</li>
+<li>EtOAc</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Method 12
+<span class='entity_reaction_product'>1,1-Dioxo-3,3-dibutyl-5-phenyl-7-methylthio-8-[N-((R)-α-{N-[1-(R)-2-(R)-1-(t-butoxycarbonyl)-1-hydroxy-prop-2-yl]carbamoyl}benzyl)carbamoylmethoxy]-2,3,4,5-tetrahydro-1,2,5-benzothiadiazepine</span>
+<span class='entity_starting_material'>1,1-Dioxo-3,3-dibutyl-5-phenyl-7-methylthio-8-[N-((R)-α-carboxybenzyl) carbamoylmethoxy]-2,3,4,5-tetrahydro-1,2,5-benzothiadiazepine</span> (Example 25; 50 mg, 0.078 mmol) and <span class='entity_starting_material'>tert-butyl (2R,3R)-3-amino-2-hydroxybutanoate</span> (15 mg, 0.086 mmol) were dissolved in <span class='entity_solvent'>DCM</span> (2ml) and <span class='entity_solvent'>DMF</span> (1ml) and <span class='entity_reagent_catalyst'>N-methylmorpholine</span> (17.2p1, 0.156 mmol) and <span class='entity_reagent_catalyst'>TBTU</span> (45 mg, 0.14 mmol) were added. The reaction mixture was stirred for <span class='entity_time'>4 hours</span>. The reaction mixture was put directly on an Isolute column (2g, <span class='entity_other_compound'>silica</span>). The product was eluted with a stepwise gradient using <span class='entity_other_compound'>DCM</span>:<span class='entity_other_compound'>EtOAc</span> 100:0, 95:5, 90:10 then 80:20 to give the <span class='entity_reaction_product'>title compound</span> (<span class='entity_yield_other'>33 mg</span>, <span class='entity_yield_percent'>53%</span>). M/z 797.3.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0021_graph.png" alt="Reaction Graph">
+</body>
+</html>

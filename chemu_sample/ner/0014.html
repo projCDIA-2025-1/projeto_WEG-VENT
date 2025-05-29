@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>50-f</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: water</p>
+<p>Temperature: reflux, room temperature</p>
+<p>Time: 2hrs</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>50-e</li>
+<li>50-e</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 64%</p>
+<p>Other: 1.6g</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>water</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Synthesis of compound <span class='entity_reaction_product'>50-e</span>
+A mixture of compound <span class='entity_starting_material'>50-f</span> and <span class='entity_solvent'>water</span> (40mL) was heated to <span class='entity_temperature'>reflux</span> for <span class='entity_time'>2hrs</span>, cooled to <span class='entity_temperature'>room temperature</span>, white solid was precipitated and filtered out. Solid was washed with <span class='entity_other_compound'>water</span> (20mL×3), dried under vacuum to give compound <span class='entity_reaction_product'>50-e</span> (<span class='entity_yield_other'>1.6g</span>, yield <span class='entity_yield_percent'>64%</span>). The product was used directly for the next step without further purification.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0014_graph.png" alt="Reaction Graph">
+</body>
+</html>

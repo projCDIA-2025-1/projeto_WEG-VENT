@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 6, 1</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>1-(benzo[b]thiophen-2-yl)propan-2-amine</li>
+<li>6a</li>
+<li>2-fluoro-2-methylpropyl trifluoromethanesulfonate</li>
+<li>1b</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: 1,4-dioxane</p>
+<p>Temperature: 90°C</p>
+<p>Time: 5 hours</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>N-(1-(benzo[b]thiophen-2-yl)propan-2-yl)-2-fluoro-2-methylpropan-1-amine</li>
+<li>title compound</li>
+<li>N-(1-(benzo[b]thiophen-2-yl)propan-2-yl)-2-fluoro-2-methylpropan-1-amine</li>
+<li>6b</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 35%</p>
+<p>Other: 75 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>(E)-3-(3,5-difluoro-4-((1R,3R/1S,3S)-2-(2-fluoro-2-methylpropyl)-3-methyl-1,2,3,4-tetr ahydrobenzo[4,5]thieno[3,2-c]pyridin-1-yl)phenyl)acrylic acid</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Example <span class='entity_example_label'>6</span>
+<span class='entity_other_compound'>(E)-3-(3,5-difluoro-4-((1R,3R/1S,3S)-2-(2-fluoro-2-methylpropyl)-3-methyl-1,2,3,4-tetr ahydrobenzo[4,5]thieno[3,2-c]pyridin-1-yl)phenyl)acrylic acid</span>
+Step <span class='entity_example_label'>1</span>
+<span class='entity_reaction_product'>N-(1-(benzo[b]thiophen-2-yl)propan-2-yl)-2-fluoro-2-methylpropan-1-amine</span>
+<span class='entity_starting_material'>1-(benzo[b]thiophen-2-yl)propan-2-amine</span> <span class='entity_starting_material'>6a</span> (155 mg, 0.811 mmol, prepared by a method disclosed in the patent application &quot;WO2009117097&quot;) and <span class='entity_starting_material'>2-fluoro-2-methylpropyl trifluoromethanesulfonate</span> <span class='entity_starting_material'>1b</span> (545 mg, 2.43 mmol) were dissolved in 3 mL of <span class='entity_solvent'>1,4-dioxane</span>, then <span class='entity_reagent_catalyst'>N,N-diisopropylethylamine</span> (524 mg, 4.055 mmol) was added. After stirring for <span class='entity_time'>5 hours</span> at <span class='entity_temperature'>90°C</span>, the reaction was stopped. The reaction mixture was concentrated under reduced pressure. The residue was purified by thin-layer chromatography with elution system B to obtain the <span class='entity_reaction_product'>title compound</span> <span class='entity_reaction_product'>N-(1-(benzo[b]thiophen-2-yl)propan-2-yl)-2-fluoro-2-methylpropan-1-amine</span> <span class='entity_reaction_product'>6b</span> (<span class='entity_yield_other'>75 mg</span>, yield <span class='entity_yield_percent'>35%</span>) as a yellow oil.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0024_graph.png" alt="Reaction Graph">
+</body>
+</html>

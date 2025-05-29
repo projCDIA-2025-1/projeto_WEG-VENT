@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 3</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>6,6&#x27;-(((2,2&#x27;-dimethyl-[1,1&#x27;-biphenyl]-3,3&#x27;-diyl)bis(methylene))bis(oxy))bis(2-methoxynicotinaldehyde)</li>
+<li>N-(2-aminoethyl)acetamide</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: 1,2-dichloroethane</p>
+<p>Temperature: room temperature, 85° C</p>
+<p>Time: 20 min, 3 h</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>N,N&#x27;-(((((((2,2&#x27;-Dimethyl-[1,1&#x27;-biphenyl]-3,3&#x27;-diyl)bis(methylene))bis(oxy))bis(2-methoxypyridine-6,3-diyl))bis(methylene))bis(azanediyl))bis(ethane-2,1-diyl))diacetamide</li>
+<li>N,N&#x27;-(((((((2,2&#x27;-dimethyl-[1,1&#x27;-biphenyl]-3,3&#x27;-diyl)bis(methylene))bis(oxy))bis(2-methoxypyridine-6,3-diyl))bis(methylene))bis(azanediyl))bis(ethane-2,1-diyl))diacetamide</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 33%</p>
+<p>Other: 230 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>water</li>
+<li>HCl</li>
+<li>CH2Cl2</li>
+<li>Na2SO4</li>
+<li>TFA</li>
+<li>H2O</li>
+<li>TFA</li>
+<li>Acetonitrile</li>
+<li>ACN</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Step <span class='entity_example_label'>3</span>
+<span class='entity_reaction_product'>N,N&#x27;-(((((((2,2&#x27;-Dimethyl-[1,1&#x27;-biphenyl]-3,3&#x27;-diyl)bis(methylene))bis(oxy))bis(2-methoxypyridine-6,3-diyl))bis(methylene))bis(azanediyl))bis(ethane-2,1-diyl))diacetamide</span>
+To a solution of <span class='entity_starting_material'>6,6&#x27;-(((2,2&#x27;-dimethyl-[1,1&#x27;-biphenyl]-3,3&#x27;-diyl)bis(methylene))bis(oxy))bis(2-methoxynicotinaldehyde)</span> (750 mg, 1.46 mmol) in <span class='entity_solvent'>1,2-dichloroethane</span> (10 mL) was added <span class='entity_reagent_catalyst'>sodium triacetoxyborohydride</span> (1.23 g, 5.84 mmol) and <span class='entity_starting_material'>N-(2-aminoethyl)acetamide</span> (740 mg, 7.32 mmol). The reaction mixture was stirred at <span class='entity_temperature'>room temperature</span> for <span class='entity_time'>20 min</span> then at <span class='entity_temperature'>85° C</span>. for <span class='entity_time'>3 h</span>. The reaction mixture was poured in to ice cold <span class='entity_other_compound'>water</span> and acidified with 1N <span class='entity_other_compound'>HCl</span> to pH ˜3 and extracted with <span class='entity_other_compound'>CH2Cl2</span>. The combined organic layer was dried over <span class='entity_other_compound'>Na2SO4</span> and concentrated under reduced pressure. The crude compound was purified by prep-HPLC to afford <span class='entity_reaction_product'>N,N&#x27;-(((((((2,2&#x27;-dimethyl-[1,1&#x27;-biphenyl]-3,3&#x27;-diyl)bis(methylene))bis(oxy))bis(2-methoxypyridine-6,3-diyl))bis(methylene))bis(azanediyl))bis(ethane-2,1-diyl))diacetamide</span> (<span class='entity_yield_other'>230 mg</span>, <span class='entity_yield_percent'>33%</span>) as a colorless gum.
+UPLC Conditions
+Column: Acquity UPLC BEH C18 (2.1×100) mm, 1.7 μm
+Mobile phase: 0.05% <span class='entity_other_compound'>TFA</span> in <span class='entity_other_compound'>H2O</span>, B: 0.05% <span class='entity_other_compound'>TFA</span> in <span class='entity_other_compound'>Acetonitrile</span>
+Flow rate: 0.3 mL/min
+T/% B (min): 0/10, 4/90, 6/90, 6.1/10.
+Diluent: <span class='entity_other_compound'>ACN</span>
+Temp.: 25° C.
+Ret. time: 2.81 min
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0025_graph.png" alt="Reaction Graph">
+</body>
+</html>

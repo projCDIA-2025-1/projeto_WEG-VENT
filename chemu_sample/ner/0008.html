@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 7</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>A</li>
+<li>2-bromonaphthalene</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>7</li>
+<li>7</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 87%</p>
+<p>Other: 12.12 g</p>
+<h2>Full Text with Annotations</h2>
+<pre>
+Preparation Example <span class='entity_example_label'>7</span> Preparation of Compound <span class='entity_reaction_product'>7</span>
+<span class='entity_yield_other'>12.12 g</span> of Compound <span class='entity_reaction_product'>7</span> was prepared in the same manner as in Preparation Example 1, except that Compound <span class='entity_starting_material'>A</span> (10 g, 31.53 mmol) and <span class='entity_starting_material'>2-bromonaphthalene</span> (4.15 g, 34.69 mmol) were used. (<span class='entity_yield_percent'>87%</span>)
+MS[M+H]+=444
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0008_graph.png" alt="Reaction Graph">
+</body>
+</html>

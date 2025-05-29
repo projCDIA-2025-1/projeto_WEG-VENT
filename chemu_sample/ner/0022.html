@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 2</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>154</li>
+<li>morpholine</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: dichloromethane, methanol</p>
+<p>Temperature: room temperature</p>
+<p>Time: 1 hour</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>155</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 68%</p>
+<p>Other: 23.2 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>aqueous</li>
+<li>sodium hydrogen carbonate</li>
+<li>ethyl acetate</li>
+<li>brine</li>
+<li>magnesium sulfate</li>
+<li>amino silica gel</li>
+<li>hexane</li>
+<li>ethyl acetate</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Step <span class='entity_example_label'>2</span>
+To Compound <span class='entity_starting_material'>154</span> (30 mg, 0.057 mmol) and <span class='entity_starting_material'>morpholine</span> (0.015 mL, 0.171 mmol) in <span class='entity_solvent'>dichloromethane</span> (0.9 mL), <span class='entity_solvent'>methanol</span> (0.9 mL) and <span class='entity_reagent_catalyst'>acetic acid</span> (0.09 mL) solution was added <span class='entity_reagent_catalyst'>picoline - borane complex</span> (9.2 mg, 0.086 mmol), the mixture was stirred at <span class='entity_temperature'>room temperature</span> for <span class='entity_time'>1 hour</span>. Saturated <span class='entity_other_compound'>aqueous</span> <span class='entity_other_compound'>sodium hydrogen carbonate</span> solution (20 mL) was added thereto, and the mixture was extracted with <span class='entity_other_compound'>ethyl acetate</span> (30 mL). The organic layer was washed with saturated <span class='entity_other_compound'>brine</span> (20 mL), and dried over anhydrous <span class='entity_other_compound'>magnesium sulfate</span>. After concentration, the residue was purified by <span class='entity_other_compound'>amino silica gel</span> chromatography (<span class='entity_other_compound'>hexane</span> - <span class='entity_other_compound'>ethyl acetate</span>) to obtain Compound <span class='entity_reaction_product'>155</span> (<span class='entity_yield_other'>23.2 mg</span>, <span class='entity_yield_percent'>68%</span> yield) as brown foam.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0022_graph.png" alt="Reaction Graph">
+</body>
+</html>

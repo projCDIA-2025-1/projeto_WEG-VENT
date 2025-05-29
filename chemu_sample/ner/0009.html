@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>33</li>
+<li>N-hydroxy succinimide</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: DMF</p>
+<p>Temperature: room temperature</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>34</li>
+<li>34</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 76.4%</p>
+<p>Other: 273 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>CH2Cl2</li>
+<li>MeOH</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Synthesis of Compound <span class='entity_reaction_product'>34</span>
+Compound <span class='entity_starting_material'>33</span> (260.1 mg, 1.0 mmol) and <span class='entity_reagent_catalyst'>EDCI</span> (210.9 mg, 1.1 mmol), <span class='entity_starting_material'>N-hydroxy succinimide</span> (126.6 mg, 1.1 mmol) was dissolved in <span class='entity_solvent'>DMF</span> (14 mL). The solution was stirred overnight at <span class='entity_temperature'>room temperature</span>. Upon completion of the reaction, the solvent was removed under reduced pressure. The solid residue was purified by column chromatography with <span class='entity_other_compound'>CH2Cl2</span>/<span class='entity_other_compound'>MeOH</span> (10:1) as eluent to give the product <span class='entity_reaction_product'>34</span> as a light brown solid (<span class='entity_yield_other'>273 mg</span>, <span class='entity_yield_percent'>76.4%</span>). LC-MS m/z (ES+), 358.11 (M+H)+.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0009_graph.png" alt="Reaction Graph">
+</body>
+</html>

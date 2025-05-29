@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 5, A</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>7-chloroindolin-2-one</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Temperature: 0° C, 0° C</p>
+<p>Time: 6 h</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>5-Bromo-7-chloroindolin-2-one</li>
+<li>title compound</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 58%</p>
+<p>Other: 861 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>7-Chloro-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)indolin-2-one</li>
+<li>DCM</li>
+<li>EtOAc</li>
+<li>EtOH</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Intermediate <span class='entity_example_label'>5</span>: <span class='entity_other_compound'>7-Chloro-5-(4,4,5,5-tetramethyl-1,3,2-dioxaborolan-2-yl)indolin-2-one</span>
+Step <span class='entity_example_label'>A</span>: <span class='entity_reaction_product'>5-Bromo-7-chloroindolin-2-one</span>. To a cooled (<span class='entity_temperature'>0° C</span>.) solution of <span class='entity_starting_material'>7-chloroindolin-2-one</span> (1.0 g, 6.0 mmol) in <span class='entity_reagent_catalyst'>TFA</span> (11 mL) was added <span class='entity_reagent_catalyst'>N-bromosuccinimide</span> (1.0 g, 6.0 mmol) portionwise, and the resulting mixture was stirred at <span class='entity_temperature'>0° C</span>. for <span class='entity_time'>6 h</span>. The solvent was removed in vacuo and the residue was diluted and evaporated successively with <span class='entity_other_compound'>DCM</span> (25 mL) and <span class='entity_other_compound'>EtOAc</span> (25 mL). The crude product was triturated with <span class='entity_other_compound'>EtOH</span> to provide the <span class='entity_reaction_product'>title compound</span> as a white solid (<span class='entity_yield_other'>861 mg</span>, <span class='entity_yield_percent'>58%</span>).
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0011_graph.png" alt="Reaction Graph">
+</body>
+</html>

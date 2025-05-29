@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>(1S,3R)-1-(5-bromopyridin-2-yl)-2-(2,2-difluoroethyl)-3,5-dimethyl-1,2,3,4-tetrahydroisoquinolin-6-amine</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: CHCl3, CHCl3</p>
+<p>Temperature: 0° C, 0° C</p>
+<p>Time: 2 hours</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>(6S,8R)-6-(5-bromopyridin-2-yl)-7-(2,2-difluoroethyl)-8-methyl-6,7,8,9-tetrahydro-3H-pyrazolo[4,3-f]isoquinoline</li>
+<li>(6S,8R)-6-(5-bromopyridin-2-yl)-7-(2,2-difluoroethyl)-8-methyl-6,7,8,9-tetrahydro-3H-pyrazolo[4,3-f]isoquinoline</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 60%</p>
+<p>Other: 438 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>NaHCO3</li>
+<li>water</li>
+<li>silica</li>
+<li>EtOAc</li>
+<li>hexanes</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Preparation of <span class='entity_reaction_product'>(6S,8R)-6-(5-bromopyridin-2-yl)-7-(2,2-difluoroethyl)-8-methyl-6,7,8,9-tetrahydro-3H-pyrazolo[4,3-f]isoquinoline</span>
+<span class='entity_reagent_catalyst'>Acetic acid</span> (541 mg, 9.01 mmol) was added to a stirred solution of <span class='entity_starting_material'>(1S,3R)-1-(5-bromopyridin-2-yl)-2-(2,2-difluoroethyl)-3,5-dimethyl-1,2,3,4-tetrahydroisoquinolin-6-amine</span> (714 mg, 1.80 mmol) in <span class='entity_solvent'>CHCl3</span> (8 mL). The reaction was cooled to <span class='entity_temperature'>0° C</span>., and a solution of <span class='entity_reagent_catalyst'>isopentyl nitrite</span> (422 mg, 3.60 mmol) in <span class='entity_solvent'>CHCl3</span> (1 mL) was added dropwise. The reaction was stirred at <span class='entity_temperature'>0° C</span>. for <span class='entity_time'>2 hours</span> and then quenched by the slow addition of a solution of <span class='entity_other_compound'>NaHCO3</span> (1.5 g, 18 mmol) in <span class='entity_other_compound'>water</span> (20 mL). The phases were separated, and the organic layer was concentrated under reduced pressure. The resulting residue was purified by flash <span class='entity_other_compound'>silica</span> chromatography, elution gradient 5 to 35% <span class='entity_other_compound'>EtOAc</span> in <span class='entity_other_compound'>hexanes</span>, to afford <span class='entity_reaction_product'>(6S,8R)-6-(5-bromopyridin-2-yl)-7-(2,2-difluoroethyl)-8-methyl-6,7,8,9-tetrahydro-3H-pyrazolo[4,3-f]isoquinoline</span> (<span class='entity_yield_other'>438 mg</span>, <span class='entity_yield_percent'>60%</span>) as a light brown solid.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0045_graph.png" alt="Reaction Graph">
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 41</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>3-bromo-4-methylpyridin-2-amine</li>
+<li>1-bromo-3,3-dimethylbutan-2-one</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: EtOH</p>
+<p>Temperature: 160° C</p>
+<p>Time: 60 minutes</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>8-Bromo-2-(tert-butyl)-7-methylimidazo[1,2-a]pyridine</li>
+<li>title compound</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 74%</p>
+<p>Other: 105 mg</p>
+<h2>Other Compounds</h2>
+<ul>
+<li>H2O</li>
+<li>EtOAc</li>
+<li>brine</li>
+<li>MgSO4</li>
+<li>SiO2</li>
+<li>EtOAc</li>
+<li>hexanes</li>
+</ul>
+<h2>Full Text with Annotations</h2>
+<pre>
+Intermediate <span class='entity_example_label'>41</span>: <span class='entity_reaction_product'>8-Bromo-2-(tert-butyl)-7-methylimidazo[1,2-a]pyridine</span>
+To a microwave vial charged with <span class='entity_solvent'>EtOH</span> (3 mL) were added <span class='entity_starting_material'>3-bromo-4-methylpyridin-2-amine</span> (100 mg, 0.54 mmol), <span class='entity_starting_material'>1-bromo-3,3-dimethylbutan-2-one</span> (0.16 mL, 1.18 mmol), and <span class='entity_reagent_catalyst'>potassium phosphate</span> (340 mg, 1.60 mmol). The vial was capped and heated to <span class='entity_temperature'>160° C</span>. in the microwave for <span class='entity_time'>60 minutes</span>. The reaction mixture was diluted with <span class='entity_other_compound'>H2O</span> and extracted with <span class='entity_other_compound'>EtOAc</span> (×2). The combined organic extracts were washed with <span class='entity_other_compound'>brine</span>, dried (<span class='entity_other_compound'>MgSO4</span>), filtered, and concentrated. Purification (FCC, <span class='entity_other_compound'>SiO2</span>; 0-30% <span class='entity_other_compound'>EtOAc</span>/<span class='entity_other_compound'>hexanes</span>) provided the <span class='entity_reaction_product'>title compound</span> as a light yellow oil (<span class='entity_yield_other'>105 mg</span>, <span class='entity_yield_percent'>74%</span> yield).
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0012_graph.png" alt="Reaction Graph">
+</body>
+</html>

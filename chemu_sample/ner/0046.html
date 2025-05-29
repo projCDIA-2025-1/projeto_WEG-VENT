@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<h1>Example 4</h1>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>racemic 3-aminoquinuclidine</li>
+<li>acetic acid</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="conditions">
+<h2>Conditions</h2>
+<p>Solvent: Toluene</p>
+<p>Temperature: room temperature, 60° C</p>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>racemic 3-aminoquinuclidine.diacetate</li>
+<li>racemic 3-aminoquinuclidine.diacetate</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 89%</p>
+<p>Other: 4.41 g, 39.0 mmol</p>
+<h2>Full Text with Annotations</h2>
+<pre>
+Comparative Example <span class='entity_example_label'>4</span>: Synthesis of <span class='entity_reaction_product'>racemic 3-aminoquinuclidine.diacetate</span>
+<span class='entity_solvent'>Toluene</span> solution (55.77 g) containing <span class='entity_starting_material'>racemic 3-aminoquinuclidine</span> (5.56 g: 44.1 mmol) was charged into a 100 mL-flask equipped with a mechanical stirrer, a thermometer, and a cooling line, and <span class='entity_starting_material'>acetic acid</span> (5.33 g: 88.8 mmol) was added thereto while stirring at <span class='entity_temperature'>room temperature</span>. Precipitated crystals were filtered, and then dried under reduced pressure at <span class='entity_temperature'>60° C</span>., to obtain <span class='entity_reaction_product'>racemic 3-aminoquinuclidine.diacetate</span> (<span class='entity_yield_other'>4.41 g</span>: <span class='entity_yield_other'>39.0 mmol</span>, yield=<span class='entity_yield_percent'>89%</span>) as a white crystal.
+Endothermic peak top temperature in DSC: 120° C., 152° C.
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0046_graph.png" alt="Reaction Graph">
+</body>
+</html>

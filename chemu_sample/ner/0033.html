@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.entity_example_label { background-color: #FFFF99; padding: 2px; }
+.entity_other_compound { background-color: #ADD8E6; padding: 2px; }
+.entity_reaction_product { background-color: #98FB98; padding: 2px; }
+.entity_starting_material { background-color: #FFDAB9; padding: 2px; }
+.entity_solvent { background-color: #E6E6FA; padding: 2px; }
+.entity_temperature { background-color: #FFB6C1; padding: 2px; }
+.entity_time { background-color: #B0E0E6; padding: 2px; }
+.entity_yield_percent { background-color: #D8BFD8; padding: 2px; }
+.entity_yield_other { background-color: #F0E68C; padding: 2px; }
+
+    body { font-family: Arial, sans-serif; }
+    h1 { color: navy; }
+    h2 { color: darkgreen; }
+    ul { list-style-type: none; }
+    li { margin-bottom: 5px; }
+    .reaction-flow { display: flex; align-items: center; }
+    .arrow { font-size: 24px; margin: 0 20px; }
+    pre { white-space: pre-wrap; }
+    img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+<div class="reaction-flow">
+<div class="starting-materials">
+<h2>Starting Materials</h2>
+<ul>
+<li>C</li>
+<li>1-ethyl-4-isocyanatobenzene</li>
+</ul>
+</div>
+<span class="arrow">→</span>
+<div class="products">
+<h2>Products</h2>
+<ul>
+<li>(S)-3-(3,5-DIFLUOROPHENYL)-N-((2R,6S,8AS,14AS,20S,23AS)-2,6-DIMETHYL-5,8,14,19,23-PENTAOXOOCTADECAHYDRO-1H,5H,14H,19H-PYRIDO[2,1-I]DIPYRROLO[2,1-C:2&#x27;,1&#x27;-L]OXA[4,7,10,13]TETRAAZACYCLOHEXADECIN-20-YL)-2-(3-(4-ETHYLPHENYL)UREIDO)PROPANAMIDE</li>
+<li>14</li>
+<li>14</li>
+<li>14</li>
+</ul>
+</div>
+</div>
+<h2>Yields</h2>
+<p>Percent: 44%</p>
+<p>Other: 35.7 mg</p>
+<h2>Full Text with Annotations</h2>
+<pre>
+n. PREPARATION OF <span class='entity_reaction_product'>(S)-3-(3,5-DIFLUOROPHENYL)-N-((2R,6S,8AS,14AS,20S,23AS)-2,6-DIMETHYL-5,8,14,19,23-PENTAOXOOCTADECAHYDRO-1H,5H,14H,19H-PYRIDO[2,1-I]DIPYRROLO[2,1-C:2&#x27;,1&#x27;-L]OXA[4,7,10,13]TETRAAZACYCLOHEXADECIN-20-YL)-2-(3-(4-ETHYLPHENYL)UREIDO)PROPANAMIDE</span> (COMPOUND <span class='entity_reaction_product'>14</span>).
+Compound <span class='entity_reaction_product'>14</span> was synthesized from compound <span class='entity_starting_material'>C</span> (70 mg, 0.100 mmol), <span class='entity_starting_material'>1-ethyl-4-isocyanatobenzene</span> (17.7 mg, 0.12 mmol) and <span class='entity_reagent_catalyst'>triethylamine</span> (66 μL, 0.482 mmol) following the general synthesis method as described herein above. Compound <span class='entity_reaction_product'>14</span> was provided as a ligh yellow solid (<span class='entity_yield_other'>35.7 mg</span>, <span class='entity_yield_percent'>44%</span>);
+</pre>
+<h2>Reaction Graph</h2>
+<img src="0033_graph.png" alt="Reaction Graph">
+</body>
+</html>
