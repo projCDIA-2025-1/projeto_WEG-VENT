@@ -1,0 +1,203 @@
+"""HTML templates for report generation."""
+
+import html
+from typing import List, Dict, Any
+from datetime import datetime
+
+def get_base_template() -> str:
+    """Get the base HTML template."""
+    return """<!DOCTYPE html>
+<html>
+<head>
+    <title>Patents Analysis Report - {date}</title>
+    <style>
+        body {{ font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }}
+        h1 {{ color: navy; border-bottom: 3px solid navy; padding-bottom: 10px; }}
+        h2 {{ color: darkgreen; margin-top: 30px; }}
+        h3 {{ color: #666; }}
+        .patent-card {{ 
+            border: 1px solid #ddd; 
+            margin: 20px 0; 
+            padding: 20px; 
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }}
+        .patent-header {{ 
+            background-color: #e8f4f8; 
+            padding: 15px; 
+            margin: -20px -20px 15px -20px;
+            border-radius: 8px 8px 0 0;
+        }}
+        .patent-info {{ margin-bottom: 15px; }}
+        .patent-info p {{ margin: 5px 0; }}
+        .entities-section {{ margin: 15px 0; }}
+        .entity-list {{ 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+            margin: 10px 0; 
+        }}
+        .entity-tag {{ 
+            padding: 4px 8px; 
+            border-radius: 4px; 
+            font-size: 0.9em;
+            border: 1px solid #ccc;
+        }}
+        .entity-starting_material {{ background-color: #FFDAB9; }}
+        .entity-reaction_product {{ background-color: #98FB98; }}
+        .entity-solvent {{ background-color: #E6E6FA; }}
+        .entity-temperature {{ background-color: #FFB6C1; }}
+        .entity-time {{ background-color: #B0E0E6; }}
+        .entity-yield_percent {{ background-color: #D8BFD8; }}
+        .entity-other_compound {{ background-color: #ADD8E6; }}
+        details {{ margin: 15px 0; }}
+        summary {{ 
+            cursor: pointer; 
+            font-weight: bold; 
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }}
+        summary:hover {{ background-color: #e0e0e0; }}
+        .more-info {{ padding: 15px; }}
+        .visualization {{ text-align: center; margin: 20px 0; }}
+        .visualization img {{ max-width: 100%; height: auto; border: 1px solid #ddd; }}
+        .summary-stats {{ 
+            background-color: #f0f8ff; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin: 20px 0; 
+        }}
+        .stats-grid {{ 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 15px; 
+        }}
+        .stat-item {{ text-align: center; }}
+        .stat-number {{ font-size: 2em; font-weight: bold; color: navy; }}
+        .stat-label {{ color: #666; }}
+    </style>
+</head>
+<body>
+    <h1>Patents Analysis Report</h1>
+    <p><strong>Generated on:</strong> {date}</p>
+    <p><strong>Search Keywords:</strong> {keywords}</p>
+    
+    {summary_stats}
+    
+    <h2>Patent Details</h2>
+    {patents_content}
+    
+</body>
+</html>"""
+
+def format_patent_card(patent: Dict[str, Any], entities: List[Dict[str, Any]], 
+                      visualizations: Dict[str, str]) -> str:
+    """Format a single patent as an HTML card."""
+    # Group entities by type
+    entities_by_type = {}
+    for entity in entities:
+        entity_type = entity['entity_type']
+        if entity_type not in entities_by_type:
+            entities_by_type[entity_type] = []
+        entities_by_type[entity_type].append(entity['entity_text'])
+    
+    # Patent header
+    card_html = f"""
+    <div class="patent-card">
+        <div class="patent-header">
+            <h3>{html.escape(patent.get('title', 'No Title'))}</h3>
+            <p><strong>Patent Number:</strong> {html.escape(patent.get('patent_number', ''))}</p>
+        </div>
+        
+        <div class="patent-info">
+            <p><strong>Published:</strong> {html.escape(patent.get('publication_date', ''))}</p>
+            <p><strong>Assignees:</strong> {html.escape(patent.get('assignees', ''))}</p>
+            <p><strong>Jurisdiction:</strong> {html.escape(patent.get('jurisdiction', ''))}</p>
+            <p><strong>Citation Count:</strong> {patent.get('citation_count', 0)}</p>
+        </div>
+    """
+    
+    # Add entities section if any entities found
+    if entities_by_type:
+        card_html += '<div class="entities-section"><h4>Recognized Entities</h4>'
+        for entity_type, entity_texts in entities_by_type.items():
+            formatted_type = entity_type.replace('_', ' ').title()
+            card_html += f'<p><strong>{formatted_type}:</strong></p>'
+            card_html += '<div class="entity-list">'
+            for text in set(entity_texts):  # Remove duplicates
+                css_class = f"entity_{entity_type.lower()}"
+                card_html += f'<span class="entity-tag {css_class}">{html.escape(text)}</span>'
+            card_html += '</div>'
+        card_html += '</div>'
+    
+    # Add visualizations
+    if visualizations:
+        for viz_type, viz_path in visualizations.items():
+            if viz_path and os.path.exists(viz_path):
+                filename = os.path.basename(viz_path)
+                card_html += f'''
+                <div class="visualization">
+                    <h4>Reaction Graph</h4>
+                    <img src="{filename}" alt="Reaction Graph for {patent.get('patent_number', '')}">
+                </div>
+                '''
+    
+    # Expandable details section
+    card_html += f"""
+        <details>
+            <summary>Additional Information</summary>
+            <div class="more-info">
+                <h4>Abstract</h4>
+                <p>{html.escape(patent.get('abstract', 'No abstract available'))}</p>
+                
+                <h4>Inventors</h4>
+                <p>{html.escape(patent.get('inventors', 'Not specified'))}</p>
+                
+                <h4>IPC Codes</h4>
+                <p>{html.escape(patent.get('ipc_codes', 'Not specified'))}</p>
+                
+                <h4>International Family</h4>
+                <p>{html.escape(patent.get('international_family', 'Not specified'))}</p>
+            </div>
+        </details>
+    </div>
+    """
+    
+    return card_html
+
+def format_summary_stats(patents: List[Dict[str, Any]], all_entities: List[Dict[str, Any]]) -> str:
+    """Format summary statistics."""
+    total_patents = len(patents)
+    total_entities = len(all_entities)
+    
+    # Count unique entity types
+    entity_types = set(entity['entity_type'] for entity in all_entities)
+    unique_entity_types = len(entity_types)
+    
+    # Count patents with entities
+    patents_with_entities = len([p for p in patents if any(e.get('patent_number') == p.get('patent_number') for e in all_entities)])
+    
+    return f"""
+    <div class="summary-stats">
+        <h2>Summary Statistics</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">{total_patents}</div>
+                <div class="stat-label">Total Patents</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">{total_entities}</div>
+                <div class="stat-label">Total Entities</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">{unique_entity_types}</div>
+                <div class="stat-label">Entity Types</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">{patents_with_entities}</div>
+                <div class="stat-label">Patents with Entities</div>
+            </div>
+        </div>
+    </div>
+    """
