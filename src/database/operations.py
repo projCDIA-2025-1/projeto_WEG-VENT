@@ -15,15 +15,15 @@ def insert_patent(patent_data: Dict[str, Any], keyword: str, ipc_filter: str) ->
                      (patent_number, title, abstract, publication_date, filing_date, 
                       inventors, assignees, ipc_codes, search_keyword, ipc_filter, 
                       fetch_date, assignee_location, full_text, jurisdiction, 
-                      international_family, citation_count)
-                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), ?, ?, ?, ?, ?)''',
+                      international_family, citation_count, ai_summary)
+                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), ?, ?, ?, ?, ?,?)''',
                   (patent_data.get("patent_number"), patent_data.get("title"), 
                    patent_data.get("abstract"), patent_data.get("publication_date"),
                    patent_data.get("filing_date"), patent_data.get("inventors"), 
                    patent_data.get("assignees"), patent_data.get("ipc_codes"),
                    keyword, ipc_filter, patent_data.get("assignee_location"), 
                    patent_data.get("full_text"), patent_data.get("jurisdiction"), 
-                   patent_data.get("international_family"), patent_data.get("citation_count")))
+                   patent_data.get("international_family"), patent_data.get("citation_count"), patent_data.get("ai_summary")))
         conn.commit()
         return True
     except Exception as e:

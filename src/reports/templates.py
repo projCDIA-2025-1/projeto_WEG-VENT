@@ -136,6 +136,12 @@ def get_base_template() -> str:
             padding: 15px;
             margin: 20px 0;
         }}
+        .AI-Resume {{
+            background-color: #fff;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }}
         .entities-section {{
             margin-top: 20px;
         }}
@@ -220,7 +226,7 @@ def format_patent_card(patent: Dict[str, Any], entities: List[Dict[str, Any]],
     """Format a single patent card with entities and visualizations."""
     if visualizations is None:
         visualizations = {}
-    
+    print(patent)
     # Safe get with default values
     def safe_get(key, default="Not specified"):
         value = patent.get(key)
@@ -296,6 +302,10 @@ def format_patent_card(patent: Dict[str, Any], entities: List[Dict[str, Any]],
                 <p>{html.escape(safe_get('abstract'))}</p>
             </div>
             
+            <div class="AI-Resume">
+                <h4>AI resume</h4>
+                <p>{html.escape(safe_get('ai_summary'))}</p>
+            </div>
             <div class="entities-section">
                 <h4>Named Entities</h4>
                 {entities_html}

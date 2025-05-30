@@ -27,7 +27,8 @@ def create_database():
                   full_text TEXT,
                   jurisdiction TEXT,
                   international_family TEXT,
-                  citation_count INTEGER)''')
+                  citation_count INTEGER,
+                  ai_summary TEXT)''')
     
     c.execute('''CREATE TABLE IF NOT EXISTS ner_results
                  (id INTEGER PRIMARY KEY,
