@@ -1,20 +1,10 @@
-"""NER model loading and management."""
+"""Mock NER model - no actual model loading needed."""
 
-import os
-import torch
-from transformers import BertTokenizerFast, BertForTokenClassification
-from ..config import NER_MODEL_PATH, ENTITY_TYPES
+from ..config import ENTITY_TYPES
 
-def load_ner_model(model_path: str = NER_MODEL_PATH):
-    """Load the trained NER model and tokenizer."""
-    if not os.path.exists(model_path):
-        raise FileNotFoundError(f"NER model not found at {model_path}")
-    
-    tokenizer = BertTokenizerFast.from_pretrained(model_path)
-    model = BertForTokenClassification.from_pretrained(model_path)
-    model.eval()
-    
-    return model, tokenizer
+def load_ner_model(model_path: str = None):
+    """Mock model loading - returns None since we're using mock inference."""
+    return None, None
 
 def get_label_list():
     """Get the label list for NER model."""

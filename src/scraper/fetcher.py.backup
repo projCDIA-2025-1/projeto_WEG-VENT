@@ -10,17 +10,7 @@ import json
 
 def build_search_params(keyword, ipc_codes=None, page=None):
     """Build search parameters for Google Patents XHR query."""
-    params = {}
-    
-    # Only add keyword if it's not empty
-    if keyword and keyword.strip():
-        params["q"] = keyword
-    elif ipc_codes:
-        # If no keyword but we have IPC codes, use a wildcard or empty query
-        params["q"] = "*"  # Use wildcard to search all patents
-    else:
-        params["q"] = "*"  # Default wildcard
-    
+    params = {"q": keyword}
     if ipc_codes:
         params["classification"] = "+OR+".join(ipc_codes)
     if page is not None:

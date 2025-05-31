@@ -144,5 +144,48 @@ def get_database_stats() -> Dict[str, Any]:
     c.execute("SELECT MIN(fetch_date) FROM patents")
     stats["earliest_fetch"] = c.fetchone()[0]
     
+    # Add citation and region statistics
+    c.execute("SELECT SUM(citation_count) FROM patents WHERE citation_count IS NOT NULL")
+    result = c.fetchone()
+    stats["total_citations"] = result[0] if result[0] is not None else 0
+    
+    c.execute("SELECT AVG(citation_count) FROM patents WHERE citation_count IS NOT NULL")
+    result = c.fetchone()
+    stats["avg_citations"] = round(result[0], 2) if result[0] is not None else 0
+    
+    c.execute("SELECT COUNT(DISTINCT jurisdiction) FROM patents WHERE jurisdiction IS NOT NULL")
+    stats["unique_jurisdictions"] = c.fetchone()[0]
+    
+    c.execute("""SELECT jurisdiction, COUNT(*) as count 
+                 FROM patents 
+                 WHERE jurisdiction IS NOT NULL 
+                 GROUP BY jurisdiction 
+                 ORDER BY count DESC""")
+    stats["jurisdiction_counts"] = c.fetchall()
+    
     conn.close()
+    return stats
+
+def get_citation_and_region_stats(patents: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Get citation and region statistics for a specific set of patents."""
+    stats = {}
+    
+    # Citation statistics
+    citations = [p.get('citation_count', 0) for p in patents if p.get('citation_count') is not None]
+    stats['total_citations'] = sum(citations)
+    stats['avg_citations'] = round(sum(citations) / len(citations), 2) if citations else 0
+    stats['max_citations'] = max(citations) if citations else 0
+    
+    # Region statistics
+    jurisdictions = [p.get('jurisdiction') for p in patents if p.get('jurisdiction')]
+    unique_jurisdictions = list(set(jurisdictions))
+    stats['unique_regions'] = len(unique_jurisdictions)
+    stats['regions_list'] = unique_jurisdictions
+    
+    # Count patents per region
+    region_counts = {}
+    for jurisdiction in jurisdictions:
+        region_counts[jurisdiction] = region_counts.get(jurisdiction, 0) + 1
+    stats['region_distribution'] = sorted(region_counts.items(), key=lambda x: x[1], reverse=True)
+    
     return stats

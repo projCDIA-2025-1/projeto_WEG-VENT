@@ -67,13 +67,27 @@ def show_database_statistics():
     print(f"Total entities: {stats['total_entities']}")
     print(f"Unique keywords: {stats['unique_keywords']}")
     
+    # Citation statistics
+    print(f"\n=== Citation Statistics ===")
+    print(f"Total citations: {stats.get('total_citations', 0)}")
+    print(f"Average citations per patent: {stats.get('avg_citations', 0)}")
+    
+    # Region statistics
+    print(f"\n=== Regional Distribution ===")
+    print(f"Unique jurisdictions: {stats.get('unique_jurisdictions', 0)}")
+    
+    if stats.get('jurisdiction_counts'):
+        print("\nPatents by jurisdiction:")
+        for jurisdiction, count in stats['jurisdiction_counts']:
+            print(f"  - {jurisdiction}: {count} patents")
+    
     if stats['top_keywords']:
-        print("\nTop keywords:")
+        print("\n=== Top Keywords ===")
         for keyword, count in stats['top_keywords']:
             print(f"  - {keyword}: {count} patents")
     
     if stats['entity_counts']:
-        print("\nEntity type distribution:")
+        print("\n=== Entity Type Distribution ===")
         for entity_type, count in stats['entity_counts']:
             print(f"  - {entity_type}: {count} entities")
     
