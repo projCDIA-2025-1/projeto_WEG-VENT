@@ -80,7 +80,7 @@ def fetch_patents(keyword: str, ipc_codes: Optional[List[str]] = None,
             citation_count = len(forward_cites)
             abstract = parsed.get('abstract_text', '')
             full_text = parsed.get('full_text', '')
-            print(is_english_text(abstract))
+            # print(is_english_text(abstract))
             data = {
                 "patent_number": pn,
                 "title": parsed.get('title', ''),
@@ -97,7 +97,7 @@ def fetch_patents(keyword: str, ipc_codes: Optional[List[str]] = None,
                 "citation_count": citation_count,
                 "ai_summary" : summarize_with_ollama(abstract, full_text)
             }
-            print(data["ai_summary"])
+            # print(data["ai_summary"])
             patents.append(data)
 
     ipc_filter = ",".join(ipc_codes) if ipc_codes else "None"
