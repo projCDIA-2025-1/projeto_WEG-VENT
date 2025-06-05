@@ -11,7 +11,7 @@ import time
 from .scraper.fetcher import build_search_params, fetch_patents_data, extract_patent_numbers_from_json
 from .scraper.fetcher import ExtendedScraper
 from .utils import ensure_directory_exists
-
+from .scraper.patent_scraper import is_english_text
 # IPC codes with relevant search keywords
 TARGET_IPC_CODES = {
     "C09": ["coating", "paint", "dye", "adhesive", "polymer coating"],    # Dyes, paints, polishes, natural resins, adhesives
@@ -95,6 +95,7 @@ def scrape_patents_for_ipc(ipc_code: str, keywords: List[str], limit: int = MAX_
     scraper = ExtendedScraper(return_abstract=True)
     all_patent_numbers = []
     
+    incremental_delay = 1
     # Try each keyword for this IPC code
     for keyword in keywords:
         print(f"  Searching with keyword: '{keyword}'")
@@ -104,7 +105,6 @@ def scrape_patents_for_ipc(ipc_code: str, keywords: List[str], limit: int = MAX_
         
         patent_numbers = []
         page = 0
-        
         # Collect patent numbers for this keyword
         while len(patent_numbers) < limit // len(keywords) and page < 3:  # Distribute limit across keywords
             if page > 0:
@@ -113,16 +113,32 @@ def scrape_patents_for_ipc(ipc_code: str, keywords: List[str], limit: int = MAX_
                 search_params.pop("page", None)
                 
             try:
+                aux = []
                 json_data = fetch_patents_data(search_params)
                 page_patents = extract_patent_numbers_from_json(json_data)
                 
-                if not page_patents:
-                    break
-                    
-                patent_numbers.extend(page_patents[:limit // len(keywords) - len(patent_numbers)])
+                # if not page_patents:
+                    # break
+                for patent in page_patents:
+            # print("Processing patent:", patent)
+                    result, soup, url =  scraper.request_single_patent(patent)
+                    if result != 'Success':
+                        print(f"Error fetching patent {patent}: {result}")
+                        page_patents.remove(patent)
+                        continue
+                    patent_dict = scraper.get_scraped_data(soup, patent, url)
+                    abstract = patent_dict.get('abstract_text', '')
+                    if(not is_english_text(abstract)):
+                        page_patents.remove(patent)
+                        continue
+                    else:
+                        aux.append(patent) # this process right here might be a bottleneck, as it deletes patents that are not in English and this process is kinda slow by now, we might 
+                                   # investigate to see if we can do this in parallel or something like that   
+                patent_numbers.extend(aux[:limit // len(keywords) - len(patent_numbers)])
                 page += 1
                 time.sleep(1)  # Rate limiting
-                
+                print(f"time waited :: {1} seconds")
+                incremental_delay += 1
             except Exception as e:
                 print(f"    Error fetching patents for {ipc_code} with keyword '{keyword}': {e}")
                 break

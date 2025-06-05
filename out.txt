@@ -1,0 +1,99 @@
+python3 -m src.tendency
+Patent Tendency Detector
+Analyzing recent patent trends...
+Starting patent tendency analysis...
+Analyzing patents from 2025-04-01 to 2025-05-31
+Scraping patents for IPC: C09 with keywords: ['coating', 'paint', 'dye', 'adhesive', 'polymer coating']
+  Searching with keyword: 'coating'
+    Found 6 patents for keyword 'coating'
+  Searching with keyword: 'paint'
+    Found 6 patents for keyword 'paint'
+  Searching with keyword: 'dye'
+    Found 6 patents for keyword 'dye'
+  Searching with keyword: 'adhesive'
+    Found 6 patents for keyword 'adhesive'
+  Searching with keyword: 'polymer coating'
+    Found 6 patents for keyword 'polymer coating'
+Successfully scraped 30 patents for C09
+IPC C09: 30 patents, 159 unique keywords
+Scraping patents for IPC: C23C with keywords: ['metal coating', 'surface treatment', 'plating', 'corrosion protection']
+  Searching with keyword: 'metal coating'
+    Error fetching patents for C23C with keyword 'metal coating': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dmetal%2Bcoating%26classification%3DC23C&exp=&tags=
+    Found 0 patents for keyword 'metal coating'
+  Searching with keyword: 'surface treatment'
+    Error fetching patents for C23C with keyword 'surface treatment': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dsurface%2Btreatment%26classification%3DC23C&exp=&tags=
+    Found 0 patents for keyword 'surface treatment'
+  Searching with keyword: 'plating'
+    Error fetching patents for C23C with keyword 'plating': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dplating%26classification%3DC23C&exp=&tags=
+    Found 0 patents for keyword 'plating'
+  Searching with keyword: 'corrosion protection'
+    Error fetching patents for C23C with keyword 'corrosion protection': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dcorrosion%2Bprotection%26classification%3DC23C&exp=&tags=
+    Found 0 patents for keyword 'corrosion protection'
+No patents found for IPC C23C
+Scraping patents for IPC: C08F with keywords: ['polymerization', 'polymer synthesis', 'monomer', 'plastic']
+  Searching with keyword: 'polymerization'
+    Error fetching patents for C08F with keyword 'polymerization': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dpolymerization%26classification%3DC08F&exp=&tags=
+    Found 0 patents for keyword 'polymerization'
+  Searching with keyword: 'polymer synthesis'
+    Error fetching patents for C08F with keyword 'polymer synthesis': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dpolymer%2Bsynthesis%26classification%3DC08F&exp=&tags=
+    Found 0 patents for keyword 'polymer synthesis'
+  Searching with keyword: 'monomer'
+    Error fetching patents for C08F with keyword 'monomer': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dmonomer%26classification%3DC08F&exp=&tags=
+    Found 0 patents for keyword 'monomer'
+  Searching with keyword: 'plastic'
+    Error fetching patents for C08F with keyword 'plastic': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dplastic%26classification%3DC08F&exp=&tags=
+    Found 0 patents for keyword 'plastic'
+No patents found for IPC C08F
+Scraping patents for IPC: C08G with keywords: ['polymer', 'resin', 'condensation', 'polyester', 'polyurethane']
+  Searching with keyword: 'polymer'
+    Error fetching patents for C08G with keyword 'polymer': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dpolymer%26classification%3DC08G&exp=&tags=
+    Found 0 patents for keyword 'polymer'
+  Searching with keyword: 'resin'
+    Error fetching patents for C08G with keyword 'resin': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dresin%26classification%3DC08G&exp=&tags=
+    Found 0 patents for keyword 'resin'
+  Searching with keyword: 'condensation'
+    Error fetching patents for C08G with keyword 'condensation': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dcondensation%26classification%3DC08G&exp=&tags=
+    Found 0 patents for keyword 'condensation'
+  Searching with keyword: 'polyester'
+    Error fetching patents for C08G with keyword 'polyester': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dpolyester%26classification%3DC08G&exp=&tags=
+    Found 0 patents for keyword 'polyester'
+  Searching with keyword: 'polyurethane'
+    Error fetching patents for C08G with keyword 'polyurethane': 503 Server Error: Service Unavailable for url: https://patents.google.com/xhr/query?url=q%3Dpolyurethane%26classification%3DC08G&exp=&tags=
+    Found 0 patents for keyword 'polyurethane'
+No patents found for IPC C08G
+
+Global analysis: 30 total patents, 159 unique keywords
+Tendency analysis saved to: tendencies_data/tendencies_202505.json
+
+============================================================
+PATENT TENDENCY ANALYSIS SUMMARY
+============================================================
+Analysis Date: 2025-05-31T15:31:04.582543
+Date Range: 2025-04-01 to 2025-05-31
+Months Analyzed: 2
+
+Global Statistics:
+  Total Patents: 30
+  Unique Keywords: 159
+
+Top 10 Trending Keywords:
+   1. coating: 10
+   2. eller: 8
+   3. includes: 8
+   4. rste: 6
+   5. applicator: 6
+   6. composition: 5
+   7. fluid: 5
+   8. mixing: 5
+   9. raw: 4
+  10. steel: 4
+
+Top 5 Trending Phrases:
+  1. coating composition: 5
+  2. raw steel: 4
+  3. static mixing: 4
+  4. mixing nozzle: 4
+  5. static mixing nozzle: 4
+
+IPC Code Analysis:
+  C09: 30 patents
