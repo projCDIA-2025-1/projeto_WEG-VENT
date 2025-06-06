@@ -290,6 +290,19 @@ def get_base_template() -> str:
             font-weight: bold;
             box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
         }}
+        .correct-btn {{
+            font-size: 10px;
+            padding: 2px 4px;
+            margin-left: 5px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }}
+        .correct-btn:hover {{
+            background-color: #218838;
+        }}
     </style>
     <script>
         let currentHighlightIndex = -1;
@@ -464,6 +477,53 @@ def get_base_template() -> str:
             }}
         }}
 
+        // Feedback mechanism functions
+        let corrections = [];
+
+        function correctEntity(button) {{
+            const originalEntity = button.getAttribute('data-entity');
+            const patentCard = button.closest('.patent-card');
+            const patentNumber = patentCard.querySelector('.patent-number').textContent.replace('Patent: ', '');
+            const abstractText = patentCard.querySelector('.abstract p').textContent;
+            const correctedEntity = prompt('Enter the correct entity text:', originalEntity);
+            
+            if (correctedEntity !== null && correctedEntity !== originalEntity) {{
+                corrections.push({{
+                    patentNumber: patentNumber,
+                    abstract: abstractText,
+                    originalEntity: originalEntity,
+                    correctedEntity: correctedEntity
+                }});
+                alert('Correction recorded.');
+            }}
+        }}
+
+        function saveCorrections() {{
+            if (corrections.length === 0) {{
+                alert('No corrections to save.');
+                return;
+            }}
+            
+            let correctionsText = '';
+            corrections.forEach(c => {{
+                correctionsText += `Patent: ${{c.patentNumber}}\\n`;
+                correctionsText += `Abstract: ${{c.abstract}}\\n`;
+                correctionsText += `Original Entity: ${{c.originalEntity}}\\n`;
+                correctionsText += `Corrected Entity: ${{c.correctedEntity}}\\n`;
+                correctionsText += '---\\n';
+            }});
+            
+            const blob = new Blob([correctionsText], {{ type: 'text/plain' }});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'corrections.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }}
+
         // Add event listeners
         document.addEventListener('DOMContentLoaded', function() {{
             const searchBox = document.getElementById('searchBox');
@@ -529,6 +589,11 @@ def get_base_template() -> str:
             <h2>Patent Details</h2>
             {patents_content}
         </div>
+        
+        <div class="corrections-section">
+            <h2>Corrections</h2>
+            <button onclick="saveCorrections()">Save Corrections</button>
+        </div>
     </div>
 </body>
 </html>
@@ -553,7 +618,7 @@ def format_patent_card(patent: Dict[str, Any], entities: List[Dict[str, Any]],
             entities_by_type[entity_type] = []
         entities_by_type[entity_type].append(entity)
     
-    # Generate entity HTML
+    # Generate entity HTML with correction buttons
     entities_html = ""
     if entities_by_type:
         entities_html = '<div class="entity-list">'
@@ -565,7 +630,11 @@ def format_patent_card(patent: Dict[str, Any], entities: List[Dict[str, Any]],
             '''
             for entity in type_entities:
                 entity_text = entity.get('entity_text', '')
-                entities_html += f'<span class="entity" style="background-color: #e9ecef;">{html.escape(entity_text)}</span>'
+                escaped_text = html.escape(entity_text)
+                entities_html += f'''
+                <span class="entity" style="background-color: #e9ecef;">{escaped_text}</span>
+                <button class="correct-btn" data-entity="{escaped_text}" onclick="correctEntity(this)">Correct</button>
+                '''
             entities_html += '</div></div>'
         entities_html += '</div>'
     else:
