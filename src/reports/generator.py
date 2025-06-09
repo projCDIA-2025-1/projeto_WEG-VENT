@@ -30,7 +30,7 @@ def generate_patent_report(patents_with_entities: List[Dict[str, Any]],
         visualizations = {}
         if entities:
             visualizations = generate_visualizations_for_patent(
-                patent['patent_number'], entities, images_dir
+                patent['patent_number'], entities, IMAGES_OUTPUT_DIR
             )
         
         patents_content += format_patent_card(patent, entities, visualizations)

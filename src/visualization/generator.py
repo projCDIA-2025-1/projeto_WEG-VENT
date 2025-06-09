@@ -120,5 +120,5 @@ def generate_visualizations_for_patent(patent_number: str, entities: List[Dict[s
     graph_path = os.path.join(output_dir, f"{patent_number}_reaction_graph.png")
     if create_reaction_graph(entities, graph_path, patent_number):
         visualizations['reaction_graph'] = graph_path
-    
+
     return visualizations

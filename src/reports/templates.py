@@ -1,12 +1,52 @@
 """HTML templates for patent reports."""
 
 import html
+import os
 from typing import List, Dict, Any
 from collections import Counter
+from datetime import datetime
 from ..database.operations import get_citation_and_region_stats
 
+def calculate_patent_index(patent: Dict[str, Any], current_date: str) -> float:
+    """
+    Calculate the index for a patent based on citation over time, number of different localities, and publication date.
+    
+    :param patent: Dictionary containing patent information
+    :param current_date: String representing the current date in 'YYYY-MM-DD' format
+    :return: Calculated index for the patent
+    """
+    # Parse publication date
+    pub_date_str = patent.get('publication_date', '1900-01-01')
+    try:
+        pub_date = datetime.strptime(pub_date_str, '%Y-%m-%d')
+    except ValueError:
+        pub_date = datetime.strptime('1900-01-01', '%Y-%m-%d')
+    current_date = datetime.strptime(current_date, '%Y-%m-%d')
+    
+    # Calculate age in years
+    age_years = (current_date - pub_date).days / 365.25
+    
+    # Adjusted citation count: citation_count / (age_years + 1)
+    citation_count = patent.get('citation_count', 0)
+    adjusted_citation = citation_count / (age_years + 1) if age_years >= 0 else citation_count
+    
+    # Number of localities: based on assignee_location
+    assignee_location = patent.get('assignee_location', '')
+    if ',' in assignee_location:
+        num_localities = len(set(assignee_location.split(', ')))
+    else:
+        num_localities = 1 if assignee_location != "Not specified" else 0
+    
+    # Publication year factor: (pub_year - 2000)
+    pub_year = pub_date.year
+    pub_year_factor = pub_year - 2000
+    
+    # Calculate index
+    index = adjusted_citation + 10 * num_localities + pub_year_factor
+    return index
+
 def get_base_template() -> str:
-    """Get the base HTML template for patent reports."""
+    """Get the base HTML template for patent reports with escaped curly braces."""
     return """
 <!DOCTYPE html>
 <html lang="en">
@@ -645,14 +685,26 @@ def format_patent_card(patent: Dict[str, Any], entities: List[Dict[str, Any]],
     if visualizations:
         viz_html = '<div class="visualizations"><h4>Entity Visualizations</h4>'
         for viz_name, viz_path in visualizations.items():
-            viz_html += f'''
-            <div class="visualization">
-                <h5>{viz_name.replace('_', ' ').title()}</h5>
-                <img src="{viz_path}" alt="{viz_name}">
-            </div>
-            '''
+            adjusted_path = f"../{viz_path.lstrip('/')}"
+            # Check if the image file exists
+            if os.path.exists(viz_path):
+                viz_html += f'''
+                <div class="visualization">
+                    <h5>{viz_name.replace('_', ' ').title()}</h5>
+                    <a href="{adjusted_path}" target="_blank">
+                        <button>View {viz_name.replace('_', ' ').title()}</button>
+                    </a>
+                </div>
+                '''
+            else:
+                viz_html += f'''
+                <div class="visualization">
+                    <h5>{viz_name.replace('_', ' ').title()}</h5>
+                    <p class="visualization-fallback">Image not found: {adjusted_path}</p>
+                </div>
+                '''
         viz_html += '</div>'
-    
+        
     # Format citation and jurisdiction info
     citation_count = safe_get('citation_count', 0)
     jurisdiction = safe_get('jurisdiction', 'Unknown')
@@ -779,3 +831,40 @@ def format_summary_stats(patents: List[Dict[str, Any]], all_entities: List[Dict[
         </div>
     </div>
     '''
+
+def generate_report(patents: List[Dict[str, Any]], all_entities: List[Dict[str, Any]], 
+                    visualizations: Dict[str, Dict[str, str]], keywords: str, date: str) -> str:
+    """
+    Generate the complete HTML report with patents sorted by the calculated index.
+    
+    :param patents: List of patent dictionaries
+    :param all_entities: List of all entities for all patents
+    :param visualizations: Dictionary of visualizations for each patent
+    :param keywords: Keywords used for the search
+    :param date: Current date in 'YYYY-MM-DD' format
+    :return: Complete HTML report as a string
+    """
+    # Sort patents by the calculated index in descending order
+    sorted_patents = sorted(patents, key=lambda p: calculate_patent_index(p, date), reverse=True)
+    
+    # Format patents_content
+    patents_content = ""
+    for patent in sorted_patents:
+        patent_entities = [e for e in all_entities if e.get('patent_number') == patent.get('patent_number')]
+        patent_viz = visualizations.get(patent.get('patent_number', ''), {})
+        patents_content += format_patent_card(patent, patent_entities, patent_viz)
+    
+    # Format summary stats
+    summary_stats = format_summary_stats(sorted_patents, all_entities)
+    
+    # Get base template
+    template = get_base_template()
+    
+    # Replace placeholders safely
+    html_content = template.format(
+        date=date,
+        keywords=keywords,
+        summary_stats=summary_stats,
+        patents_content=patents_content
+    )
+    return html_content

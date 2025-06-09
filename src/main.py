@@ -10,7 +10,7 @@ from .database import (
     get_patents_with_ner, get_database_stats
 )
 from .scraper import fetch_patents
-from .ner import process_patent_abstract
+from .ner import Model
 from .reports import generate_patent_report
 from .utils import ensure_directory_exists
 
@@ -23,6 +23,8 @@ def fetch_and_process_patents(keywords: str, ipc_codes: Optional[List[str]] = No
     # Fetch patents
     patents, ipc_filter = fetch_patents(keywords, ipc_codes, limit, fetch_full_text)
     print(f"Found {len(patents)} patents")
+
+    model = Model()
     
     # Process each patent
     for patent in patents:
@@ -31,7 +33,10 @@ def fetch_and_process_patents(keywords: str, ipc_codes: Optional[List[str]] = No
         print(f"Stored patent: {patent['patent_number']}")
         
         # Run NER on abstract
-        entities = process_patent_abstract(patent)
+        #  entities = process_patent_abstract(patent)
+        print(patent)
+        txt = patent["abstract"] or ""
+        entities = model.predict(txt)
         if entities:
             insert_ner_results(patent['patent_number'], entities)
             print(f"Stored {len(entities)} entities for patent {patent['patent_number']}")
